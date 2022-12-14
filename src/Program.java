@@ -1,6 +1,4 @@
-import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
 public class Program {
     public static void main(String[] args) {
@@ -17,12 +15,10 @@ public class Program {
         // из алфавита указанной длины.
 
         Initial init = new Initial();
-
-        List<Character> alphabet = init.getAlphabet();
-        String filename = init.getFilename();
         System.out.println(init.toString());
+        List<Character> alphabet = init.getAlphabet();
 
-        PasswordsGenerator generator = new PasswordsGenerator(alphabet);
+        PasswordsGenerator generator = new PasswordsGenerator(alphabet,init.getFilename());
         generator.generate(init.getLength());
     }
 }
